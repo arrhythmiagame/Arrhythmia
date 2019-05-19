@@ -183,6 +183,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 276
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &34454670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -473,6 +481,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 274
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!58 &95233845
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1000,6 +1016,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 274
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &477173615
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1322,6 +1346,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 273
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &521342006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1467,6 +1499,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 276
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!58 &607285874
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2015,6 +2055,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 276
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &828793186
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2127,6 +2175,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 273
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &845783968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2318,6 +2374,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 274
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &958290859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2509,6 +2573,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 276
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &1172154005
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2793,6 +2865,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 276
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!58 &1387347925
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2951,6 +3031,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 273
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &1462386295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3281,6 +3369,8 @@ MonoBehaviour:
   theBS: {fileID: 1192367348}
   currentScore: 0
   scorePerNote: 100
+  scorePerGoodNote: 125
+  scorePerPerfectNote: 150
   scoreText: {fileID: 1791990394}
   multiplierText: {fileID: 2046179001}
   currentMultiplier: 1
@@ -3363,6 +3453,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 276
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &1721513722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3936,6 +4034,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 275
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &1972903285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4127,6 +4233,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 275
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &1984577618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4510,6 +4624,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBePressed: 0
   keyToPress: 275
+  hitEffect: {fileID: 4167310033702328749, guid: 9804eeb98e1e8a041a364103c3040d35,
+    type: 3}
+  goodEffect: {fileID: 4184042219664447942, guid: 804f08e7a89814c4b996df317e595f30,
+    type: 3}
+  perfectEffect: {fileID: 2976343039591260359, guid: a390263fb0aed9043a0aa35cf9b894aa,
+    type: 3}
+  missEffect: {fileID: 4720114356997976297, guid: f58db30bf2569854c8ec06b0ac6497ac,
+    type: 3}
 --- !u!212 &2140277599
 SpriteRenderer:
   m_ObjectHideFlags: 0
