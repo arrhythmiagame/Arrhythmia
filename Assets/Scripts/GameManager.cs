@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public float missedNotes;
 
     public GameObject resultsScreen;
+    public GameObject heartRateMonitor;
     public Text percentHitText, normalsText, goodsText, perfectsText, missesText, rankText, finalScoreText;
 
     // Start is called before the first frame update
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
             {
                 startPlaying = true;
                 theBS.hasStarted = true;
-
+                heartRateMonitor.SetActive(true);
                 theMusic.Play();
             }
         } else
