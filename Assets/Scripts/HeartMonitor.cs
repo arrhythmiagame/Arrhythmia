@@ -16,23 +16,26 @@ public class HeartMonitor : MonoBehaviour
     }
     public void Update()
     {
-        if (theImage.fillAmount == 1)
+        float alpha = theImage.color.a;
+        if (alpha <= 0f)
         {
-            theImage.fillOrigin = (int)Image.OriginHorizontal.Left;
-            filling = false;
-        } else if (theImage.fillAmount == 0)
-        {
-            theImage.fillOrigin = (int)Image.OriginHorizontal.Right;
-            filling = true;
+            theImage.color = new Color(1f, 1f, 1f, 1f);
+            alpha = 1f;
         }
+        alpha -= theTempo * Time.deltaTime * .5f;
+        if (alpha > 0.5f)
         {
-            if (filling)
+            if (Input.anyKeyDown)
             {
-                theImage.fillAmount += theTempo * Time.deltaTime;
-            } else
+                theImage.color = new Color(0f, 1f, 0f, alpha);
+            }
+        } else
+        {
+            if (Input.anyKeyDown)
             {
-                theImage.fillAmount -= theTempo * Time.deltaTime;
+                theImage.color = new Color(1f, 0f, 0f, alpha);
             }
         }
+        theImage.color = new Color(theImage.color.r, theImage.color.g, theImage.color.b, alpha);
     }
 }
