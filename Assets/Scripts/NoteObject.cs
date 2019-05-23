@@ -8,8 +8,6 @@ public class NoteObject : MonoBehaviour
     public bool canBePressed;
     private bool canBeMissed;
 
-    public KeyCode keyToPress;
-
     public GameObject hitEffect, goodEffect, perfectEffect, missEffect;
     
     // Start is called before the first frame update
@@ -21,16 +19,16 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyToPress)){
+        if (Input.anyKeyDown){
             if (canBePressed)
             {
                 canBeMissed = false;
-                if (Mathf.Abs(transform.position.y) > 0.25f)
+                if (transform.position.x < -7.0f && transform.position.x > -7.1)
                 {
-                    Debug.Log("Hit");
-                    GameManager.instance.NormalHit();
-                    Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
-                }else if (Mathf.Abs(transform.position.y) > 0.05f)
+                    Debug.Log("Perfect");
+                    GameManager.instance.PerfectHit();
+                    Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+                }else if (transform.position.x < -6.85f && transform.position.x > -7.25)
                 {
                     Debug.Log("Good");
                     GameManager.instance.GoodHit();
@@ -38,9 +36,9 @@ public class NoteObject : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Perfect");
-                    GameManager.instance.PerfectHit();
-                    Instantiate(perfectEffect, transform.position, perfectEffect.transform.rotation);
+                    Debug.Log("Hit");
+                    GameManager.instance.NormalHit();
+                    Instantiate(hitEffect, transform.position, hitEffect.transform.rotation);
                 }
                 gameObject.SetActive(false);
             }

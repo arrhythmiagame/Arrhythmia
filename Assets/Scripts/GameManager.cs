@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
         multiplierText.text = "Multiplier: x" + currentMultiplier;
         currentScore += scorePerNote * currentMultiplier;
         scoreText.text = "Score: " + currentScore;
+        heartRateMonitor.GetComponent<HeartMonitor>().PulseImage();
     }
 
     public void NormalHit()
