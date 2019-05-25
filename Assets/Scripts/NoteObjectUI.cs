@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class NoteObjectUI : MonoBehaviour
 {
@@ -37,7 +36,7 @@ public class NoteObjectUI : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        if (AnyButtonPressed())
+        if (GameManager.instance.AnyButtonPressed())
         {
 
             if (canBePressed)
@@ -59,12 +58,5 @@ public class NoteObjectUI : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-    }
-    private bool AnyButtonPressed()
-    {
-        if (Input.anyKeyDown) return true;
-        if (CrossPlatformInputManager.GetAxis("Horizontal") != 0) return true;
-        if (CrossPlatformInputManager.GetAxis("Vertical") != 0) return true;
-        return false;
     }
 }

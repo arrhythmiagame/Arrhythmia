@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class GameManager : MonoBehaviour
 {
 
-    public bool debugAxes;
     public AudioSource theMusic;
     public bool startPlaying;
     public BeatScrollerUI theBS;
@@ -50,121 +48,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (debugAxes) {
-            if (Input.GetAxis("Horizontal") != 0)
-            {
-                Debug.Log("1st axis");
-            }
-            if (Input.GetAxis("Vertical") != 0)
-            {
-                Debug.Log("2nd axis");
-            }
-            if (Input.GetAxis("3RDaxis") != 0)
-            {
-                Debug.Log("3rd axis");
-            }
-            if (Input.GetAxis("4THaxis") != 0)
-            {
-                Debug.Log("4th axis");
-            }
-            if (Input.GetAxis("5THaxis") != 0)
-            {
-                Debug.Log("5th axis");
-            }
-            if (Input.GetAxis("6THaxis") != 0)
-            {
-                Debug.Log("6th axis");
-            }
-            if (Input.GetAxis("7THaxis") != 0)
-            {
-                Debug.Log("7th axis");
-            }
-            if (Input.GetAxis("8THaxis") != 0)
-            {
-                Debug.Log("8th axis");
-            }
-            if (Input.GetAxis("9THaxis") != 0)
-            {
-                Debug.Log("9th axis");
-            }
-            if (Input.GetAxis("10THaxis") != 0)
-            {
-                Debug.Log("10th axis");
-            }
-            if (Input.GetAxis("11THaxis") != 0)
-            {
-                Debug.Log("11th axis");
-            }
-            if (Input.GetAxis("12THaxis") != 0)
-            {
-                Debug.Log("12th axis");
-            }
-            if (Input.GetAxis("13THaxis") != 0)
-            {
-                Debug.Log("13th axis");
-            }
-            if (Input.GetAxis("14THaxis") != 0)
-            {
-                Debug.Log("14th axis");
-            }
-            if (Input.GetAxis("15THaxis") != 0)
-            {
-                Debug.Log("15th axis");
-            }
-            if (Input.GetAxis("16THaxis") != 0)
-            {
-                Debug.Log("16th axis");
-            }
-            if (Input.GetAxis("17THaxis") != 0)
-            {
-                Debug.Log("17th axis");
-            }
-            if (Input.GetAxis("18THaxis") != 0)
-            {
-                Debug.Log("18th axis");
-            }
-            if (Input.GetAxis("19THaxis") != 0)
-            {
-                Debug.Log("19th axis");
-            }
-            if (Input.GetAxis("20THaxis") != 0)
-            {
-                Debug.Log("20th axis");
-            }
-            if (Input.GetAxis("21STaxis") != 0)
-            {
-                Debug.Log("21st axis");
-            }
-            if (Input.GetAxis("22NDaxis") != 0)
-            {
-                Debug.Log("22nd axis");
-            }
-            if (Input.GetAxis("23RDaxis") != 0)
-            {
-                Debug.Log("23rd axis");
-            }
-            if (Input.GetAxis("24THaxis") != 0)
-            {
-                Debug.Log("24th axis");
-            }
-            if (Input.GetAxis("25THaxis") != 0)
-            {
-                Debug.Log("25th axis");
-            }
-            if (Input.GetAxis("26THaxis") != 0)
-            {
-                Debug.Log("26th axis");
-            }
-            if (Input.GetAxis("27THaxis") != 0)
-            {
-                Debug.Log("27th axis");
-            }
-            if (Input.GetAxis("28THaxis") != 0)
-            {
-                Debug.Log("28th axis");
-            }
-        }
-        else { 
         if (!startPlaying)
         {
             if (AnyButtonPressed())
@@ -226,7 +109,6 @@ public class GameManager : MonoBehaviour
 
             }
         }
-        }
     }
 
     public void NoteHit()
@@ -274,11 +156,13 @@ public class GameManager : MonoBehaviour
         missedNotes++;
         beatMonitor.PulseImage(missedColor);
     }
-    private bool AnyButtonPressed()
+    public bool AnyButtonPressed()
     {
         if (Input.anyKeyDown) return true;
-        if (CrossPlatformInputManager.GetAxis("Horizontal") != 0) return true;
-        if (CrossPlatformInputManager.GetAxis("Vertical") != 0) return true;
+        if (Input.GetAxis("Horizontal") != 0) return true;
+        if (Input.GetAxis("Vertical") != 0) return true;
+        if (Input.GetAxis("Dpad Horizontal") != -1) return true;
+        if (Input.GetAxis("Dpad Vertical") != 0) return true;
         return false;
     }
 
