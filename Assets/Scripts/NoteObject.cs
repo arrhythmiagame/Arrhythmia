@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class NoteObject : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class NoteObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown){
+        if (AnyButtonPressed())
+        {
             if (canBePressed)
             {
                 canBeMissed = false;
@@ -61,5 +63,12 @@ public class NoteObject : MonoBehaviour
             GameManager.instance.NoteMissed();
             Instantiate(missEffect, transform.position, missEffect.transform.rotation);
         }
+    }
+
+    private bool AnyButtonPressed() {
+        if (Input.anyKeyDown) return true;
+        if (CrossPlatformInputManager.GetAxis("Horizontal") != 0) return true;
+        if (Input.GetAxis("Vert") != 0) return true;
+        return false;
     }
 }
