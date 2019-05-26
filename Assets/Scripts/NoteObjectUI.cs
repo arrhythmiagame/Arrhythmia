@@ -19,8 +19,8 @@ public class NoteObjectUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        beatDistance = Mathf.Abs(thisRect.position.x - BeatMonitorRect.position.x);
-        if (beatDistance < 30f)
+        beatDistance = thisRect.position.x - BeatMonitorRect.position.x;
+        if (beatDistance < 25f && beatDistance > -25f)
         {
             if (!canBePressed)
             {
@@ -41,11 +41,11 @@ public class NoteObjectUI : MonoBehaviour
 
             if (canBePressed)
             {
-                if (beatDistance < 10)
+                if (beatDistance > 10)
                 {
                     Debug.Log("Perfect");
                     GameManager.instance.PerfectHit();
-                }else if (beatDistance < 20)
+                }else if (beatDistance > -10)
                 {
                     Debug.Log("Good");
                     GameManager.instance.GoodHit();

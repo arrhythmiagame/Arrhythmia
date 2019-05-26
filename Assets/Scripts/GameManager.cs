@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+    public bool debugMode = false;
+
     public AudioSource theMusic;
     public bool startPlaying;
     public BeatScrollerUI theBS;
@@ -54,49 +56,54 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!startPlaying)
+        if (!debugMode)
         {
-            if (AnyButtonPressed())
+            if (!startPlaying)
             {
-                startPlaying = true;
-                theBS.hasStarted = true;
-                theMusic.Play();
-                StartCoroutine(StartAnimation());
-            }
-        } else
-        {
-            if(!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
-            {
-                theAnimator.SetBool("Paused", true);
-                normalsText.text = "" + normalHits;
-                goodsText.text = goodHits.ToString();
-                perfectsText.text = perfectHits.ToString();
-                missesText.text = "" + missedNotes;
-
-                float totalHit = normalHits + goodHits + perfectHits;
-                float percentHit = (totalHit / totalNotes)*100f;
-
-                percentHitText.text = percentHit.ToString("F1") + "%";
-
-                string rankVal = "F";
-                if(percentHit > 60f)
+                if (AnyButtonPressed())
                 {
-                    rankVal = "D";
-                    if (percentHit > 70f)
+                    startPlaying = true;
+                    theBS.hasStarted = true;
+                    theMusic.Play();
+                    StartCoroutine(StartAnimation());
+                }
+            }
+            else
+            {
+                if (!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
+                {
+                    theAnimator.SetBool("Paused", true);
+                    normalsText.text = "" + normalHits;
+                    goodsText.text = goodHits.ToString();
+                    perfectsText.text = perfectHits.ToString();
+                    missesText.text = "" + missedNotes;
+
+                    float totalHit = normalHits + goodHits + perfectHits;
+                    float percentHit = (totalHit / totalNotes) * 100f;
+
+                    percentHitText.text = percentHit.ToString("F1") + "%";
+
+                    string rankVal = "F";
+                    if (percentHit > 60f)
                     {
-                        rankVal = "C";
-                        if (percentHit > 80f)
+                        rankVal = "D";
+                        if (percentHit > 70f)
                         {
-                            rankVal = "B";
-                            if (percentHit > 90f)
+                            rankVal = "C";
+                            if (percentHit > 80f)
                             {
-                                rankVal = "A";
-                                if (percentHit > 95f)
+                                rankVal = "B";
+                                if (percentHit > 90f)
                                 {
-                                    rankVal = "S";
-                                    if (percentHit == 100f)
+                                    rankVal = "A";
+                                    if (percentHit > 95f)
                                     {
-                                        rankVal = "SS";
+                                        rankVal = "S";
+                                        if (percentHit == 100f)
+                                        {
+                                            rankVal = "SS";
+                                        }
+
                                     }
 
                                 }
@@ -107,14 +114,13 @@ public class GameManager : MonoBehaviour
 
                     }
 
+                    rankText.text = rankVal;
+
+                    finalScoreText.text = currentScore.ToString();
+
+                    resultsScreen.SetActive(true);
+
                 }
-
-                rankText.text = rankVal;
-
-                finalScoreText.text = currentScore.ToString();
-
-                resultsScreen.SetActive(true);
-
             }
         }
     }
@@ -167,11 +173,19 @@ public class GameManager : MonoBehaviour
     public bool AnyButtonPressed()
     {
         if (Input.anyKeyDown) return true;
-        if (Input.GetAxis("Horizontal") != 0) return true;
+        /*if (Input.GetAxis("Horizontal") != 0) return true;
         if (Input.GetAxis("Vertical") != 0) return true;
         if (Input.GetAxis("Dpad Horizontal") != -1) return true;
-        if (Input.GetAxis("Dpad Vertical") != 0) return true;
+        if (Input.GetAxis("Dpad Vertical") != 0) return true;*/
         return false;
+    }
+
+    public bool dpadCheck(string direction)
+    {
+        if(direction == "right" && !rightPressed)
+        {
+
+        }
     }
 
 }
