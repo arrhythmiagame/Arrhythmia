@@ -42,9 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Arrows
+  - name: BG
     uniqueID: 2383092805
     locked: 0
-  - name: Effects
+  - name: Player
     uniqueID: 62467607
+    locked: 0
+  - name: FG
+    uniqueID: 2829358117
     locked: 0

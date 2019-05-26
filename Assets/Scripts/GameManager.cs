@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public AudioSource theMusic;
     public bool startPlaying;
     public BeatScrollerUI theBS;
+    public Animator theAnimator;
 
     public static GameManager instance;
 
@@ -45,6 +46,11 @@ public class GameManager : MonoBehaviour
         totalNotes = FindObjectsOfType<NoteObjectUI>().Length;
     }
 
+    IEnumerator StartAnimation()
+    {
+        yield return new WaitForSeconds(theAnimator.GetFloat("StartDelay"));
+        theAnimator.SetBool("Paused", false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -55,11 +61,13 @@ public class GameManager : MonoBehaviour
                 startPlaying = true;
                 theBS.hasStarted = true;
                 theMusic.Play();
+                StartCoroutine(StartAnimation());
             }
         } else
         {
             if(!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
             {
+                theAnimator.SetBool("Paused", true);
                 normalsText.text = "" + normalHits;
                 goodsText.text = goodHits.ToString();
                 perfectsText.text = perfectHits.ToString();
