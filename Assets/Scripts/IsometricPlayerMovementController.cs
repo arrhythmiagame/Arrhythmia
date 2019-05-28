@@ -27,7 +27,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
         inputVector = Vector2.ClampMagnitude(inputVector, 1);
         Vector2 movement = inputVector * movementSpeed;
         Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
-        isoRenderer.SetDirection(movement);
-        rbody.MovePosition(newPos);
+        // isoRenderer.SetDirection(movement);
+        if (GameManager.instance.inputAllowed)
+        {
+            rbody.MovePosition(newPos);
+        }
     }
 }

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public bool debugMode = false;
 
+    public bool inputAllowed = false;
     public AudioSource theMusic;
     public bool startPlaying;
     public BeatScrollerUI theBS;
@@ -47,11 +48,22 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         totalNotes = FindObjectsOfType<NoteObjectUI>().Length;
     }
-
+    // Starts the animation of the character after the start delay
     IEnumerator StartAnimation()
     {
         yield return new WaitForSeconds(theAnimator.GetFloat("StartDelay"));
         theAnimator.SetBool("Paused", false);
+    }
+    // Allows input for a certain amount of time based on the beat scroller
+    public void AllowInput()
+    {
+        StartCoroutine(AllowInputEnum());
+    }
+    IEnumerator AllowInputEnum()
+    {
+        inputAllowed = true;
+        yield return new WaitForSeconds(theBS.beatTempoSeconds);
+        inputAllowed = false;
     }
     // Update is called once per frame
     void Update()
@@ -125,6 +137,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void NormalHit()
+    {
+        currentScore += scorePerNote * currentMultiplier;
+        NoteHit();
+        normalHits++;
+        beatMonitor.PulseImage(normalColor);
+    }
+
+    public void GoodHit()
+    {
+        currentScore += scorePerGoodNote * currentMultiplier;
+        NoteHit();
+        goodHits++;
+        beatMonitor.PulseImage(goodColor);
+    }
+
+    public void PerfectHit()
+    {
+        currentScore += scorePerPerfectNote * currentMultiplier;
+        NoteHit();
+        perfectHits++;
+        beatMonitor.PulseImage(perfectColor);
+    }
+
     public void NoteHit()
     {
         if (currentMultiplier - 1 < multiplierThresholds.Length)
@@ -141,27 +177,6 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + currentScore;
     }
 
-    public void NormalHit()
-    {
-        currentScore += scorePerNote * currentMultiplier;
-        NoteHit();
-        normalHits++;
-        beatMonitor.PulseImage(normalColor);
-    }
-    public void GoodHit()
-    {
-        currentScore += scorePerGoodNote * currentMultiplier;
-        NoteHit();
-        goodHits++;
-        beatMonitor.PulseImage(goodColor);
-    }
-    public void PerfectHit()
-    {
-        currentScore += scorePerPerfectNote * currentMultiplier;
-        NoteHit();
-        perfectHits++;
-        beatMonitor.PulseImage(perfectColor);
-    }
     public void NoteMissed()
     {
         currentMultiplier = 1;
@@ -170,6 +185,7 @@ public class GameManager : MonoBehaviour
         missedNotes++;
         beatMonitor.PulseImage(missedColor);
     }
+
     public bool AnyButtonPressed()
     {
         if (Input.anyKeyDown) return true;
@@ -179,13 +195,4 @@ public class GameManager : MonoBehaviour
         if (Input.GetAxis("Dpad Vertical") != 0) return true;*/
         return false;
     }
-
-    public bool dpadCheck(string direction)
-    {
-        if(direction == "right" && !rightPressed)
-        {
-
-        }
-    }
-
 }

@@ -25,6 +25,7 @@ public class NoteObjectUI : MonoBehaviour
             if (!canBePressed)
             {
                 canBePressed = true;
+                GameManager.instance.AllowInput();
             }
         }
         else

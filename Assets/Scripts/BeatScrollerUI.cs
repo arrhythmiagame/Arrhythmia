@@ -5,6 +5,7 @@ using UnityEngine;
 public class BeatScrollerUI : MonoBehaviour
 {
     public float beatTempo;
+    public float beatTempoSeconds;
     public bool hasStarted;
 
     private RectTransform theTransform;
@@ -13,7 +14,7 @@ public class BeatScrollerUI : MonoBehaviour
     void Start()
     {
         theTransform = this.gameObject.GetComponent<RectTransform>();
-        beatTempo = beatTempo / 60f;
+        beatTempoSeconds = beatTempo / 60f;
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class BeatScrollerUI : MonoBehaviour
         {
             float theXpos = theTransform.anchoredPosition.x;
             float theYpos = theTransform.anchoredPosition.y;
-            theTransform.anchoredPosition = new Vector3(theXpos - (beatTempo * Time.deltaTime * 200f), theYpos, 0);
+            theTransform.anchoredPosition = new Vector3(theXpos - (beatTempoSeconds * Time.deltaTime * 200f), theYpos, 0);
         }
     }
 }
