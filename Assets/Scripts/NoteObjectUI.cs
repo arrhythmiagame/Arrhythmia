@@ -44,16 +44,13 @@ public class NoteObjectUI : MonoBehaviour
             {
                 if (beatDistance > 10)
                 {
-                    Debug.Log("Perfect");
                     GameManager.instance.PerfectHit();
                 }else if (beatDistance > -10)
                 {
-                    Debug.Log("Good");
                     GameManager.instance.GoodHit();
                 }
                 else
                 {
-                    Debug.Log("Hit");
                     GameManager.instance.NormalHit();
                 }
                 gameObject.SetActive(false);

@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     IEnumerator AllowInputEnum()
     {
         inputAllowed = true;
-        yield return new WaitForSeconds(theBS.beatTempoSeconds);
+        yield return new WaitForSeconds(1/theBS.beatTempoSeconds);
         inputAllowed = false;
     }
     // Update is called once per frame
