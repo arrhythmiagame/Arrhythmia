@@ -6,10 +6,11 @@ public class IsometricPlayerMovementController : MonoBehaviour
 {
 
     public float movementSpeed = 1f;
+    public float dashMultiplier = 2f;
     IsometricCharacterRenderer isoRenderer;
     public Vector2 currentPos;
     public Vector2 newPos;
-
+    public GameManager gm;
     Rigidbody2D rbody;
 
     private void Awake()
@@ -18,6 +19,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         currentPos = rbody.position;
         newPos = currentPos;
+        gm = GameManager.instance;
 
     }
 
@@ -25,36 +27,24 @@ public class IsometricPlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        currentPos = rbody.position;
-        if (newPos == currentPos)
+        if (GameManager.instance.startPlaying)
         {
+            currentPos = rbody.position;
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
             Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
             inputVector = Vector2.ClampMagnitude(inputVector, 1);
-            Vector2 movement = inputVector * movementSpeed;
-            if (GameManager.instance.inputAllowed)
+            Vector2 movement = inputVector * movementSpeed * Time.deltaTime;
+            if (Input.GetButtonDown("Dash"))
             {
-                newPos = currentPos + movement;
+                movement = inputVector * movementSpeed * dashMultiplier * Time.deltaTime;
             }
+            newPos = currentPos + movement;
+            rbody.MovePosition(newPos);
         }
-        else
-        {
-            float xDifference = Mathf.Abs(newPos.x - currentPos.x);
-            float yDifference = Mathf.Abs(newPos.y - currentPos.y);
-            Debug.Log(xDifference);
-            if (xDifference < .1 && yDifference < .1)
-            {
-                newPos = currentPos;
-            }
-            else
-            {
-                float movementTime = 0.1f;
-                float lerpX = Mathf.Lerp(currentPos.x, newPos.x, movementTime);
-                float lerpY = Mathf.Lerp(currentPos.y, newPos.y, movementTime);
-                Vector2 lerpPos = new Vector2(lerpX, lerpY);
-                rbody.MovePosition(lerpPos);
-            }
-        }
+    }
+
+    void CharacterDash(Vector2 inputVector)
+    {
     }
 }

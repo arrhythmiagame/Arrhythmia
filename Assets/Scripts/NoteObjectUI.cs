@@ -37,7 +37,7 @@ public class NoteObjectUI : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        if (GameManager.instance.AnyButtonPressed())
+        if (GameManager.instance.ActionButtonPressed())
         {
 
             if (canBePressed)

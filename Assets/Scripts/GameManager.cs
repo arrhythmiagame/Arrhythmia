@@ -57,11 +57,11 @@ public class GameManager : MonoBehaviour
     // Allows input for a certain amount of time based on the beat scroller
     public void AllowInput()
     {
+        inputAllowed = true;
         StartCoroutine(AllowInputEnum());
     }
     IEnumerator AllowInputEnum()
     {
-        inputAllowed = true;
         yield return new WaitForSeconds(1/theBS.beatTempoSeconds);
         inputAllowed = false;
     }
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         {
             if (!startPlaying)
             {
-                if (AnyButtonPressed())
+                if (ActionButtonPressed())
                 {
                     startPlaying = true;
                     theBS.hasStarted = true;
@@ -186,13 +186,12 @@ public class GameManager : MonoBehaviour
         beatMonitor.PulseImage(missedColor);
     }
 
-    public bool AnyButtonPressed()
+    public bool ActionButtonPressed()
     {
-        if (Input.anyKeyDown) return true;
-        /*if (Input.GetAxis("Horizontal") != 0) return true;
-        if (Input.GetAxis("Vertical") != 0) return true;
-        if (Input.GetAxis("Dpad Horizontal") != -1) return true;
-        if (Input.GetAxis("Dpad Vertical") != 0) return true;*/
+        if (Input.GetButtonDown("Dash")) return true;
+        if (Input.GetButtonDown("Attack")) return true;
+        if (Input.GetButtonDown("Block")) return true;
+        if (Input.GetButtonDown("Ultimate")) return true;
         return false;
     }
 }
