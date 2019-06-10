@@ -27,21 +27,18 @@ public class IsometricPlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.instance.startPlaying)
+        currentPos = rbody.position;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
+        inputVector = Vector2.ClampMagnitude(inputVector, 1);
+        Vector2 movement = inputVector * movementSpeed * Time.deltaTime;
+        if (Input.GetButtonDown("Dash"))
         {
-            currentPos = rbody.position;
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-            Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
-            inputVector = Vector2.ClampMagnitude(inputVector, 1);
-            Vector2 movement = inputVector * movementSpeed * Time.deltaTime;
-            if (Input.GetButtonDown("Dash"))
-            {
-                movement = inputVector * movementSpeed * dashMultiplier * Time.deltaTime;
-            }
-            newPos = currentPos + movement;
-            rbody.MovePosition(newPos);
+            movement = inputVector * movementSpeed * dashMultiplier * Time.deltaTime;
         }
+        newPos = currentPos + movement;
+        rbody.MovePosition(newPos);
     }
 
     void CharacterDash(Vector2 inputVector)
