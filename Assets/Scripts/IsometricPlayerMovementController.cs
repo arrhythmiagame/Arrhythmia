@@ -29,7 +29,17 @@ public class IsometricPlayerMovementController : MonoBehaviour
     {
         currentPos = rbody.position;
         float horizontalInput = Input.GetAxis("Horizontal");
+        float lsHorizontalInput = Input.GetAxis("Leftstick Horizontal");
+        if(lsHorizontalInput != 0)
+        {
+            horizontalInput = lsHorizontalInput;
+        }
         float verticalInput = Input.GetAxis("Vertical");
+        float lsVerticalInput = Input.GetAxis("Leftstick Vertical");
+        if (lsVerticalInput != 0)
+        {
+            verticalInput = lsVerticalInput;
+        }
         Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
         inputVector = Vector2.ClampMagnitude(inputVector, 1);
         Vector2 movement = inputVector * movementSpeed * Time.deltaTime;

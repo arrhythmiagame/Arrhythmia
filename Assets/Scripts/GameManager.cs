@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 30;
         instance = this;
 
         scoreText.text = "Score: 0";
@@ -193,5 +194,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Block")) return true;
         if (Input.GetButtonDown("Ultimate")) return true;
         return false;
+    }
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 100, 100), (1.0f / Time.smoothDeltaTime).ToString());
     }
 }
