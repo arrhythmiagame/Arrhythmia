@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
     public bool ultimateValue;
     public bool pauseValue;
     public bool jsButton0;
+    public string[] controllerNames;
 
 
     void FixedUpdate()
@@ -31,6 +32,6 @@ public class InputManager : MonoBehaviour
         blockValue = Input.GetButton("Block");
         ultimateValue = Input.GetButton("Ultimate");
         pauseValue = Input.GetButton("Cancel");
-
+        controllerNames = Input.GetJoystickNames();
     }
 }

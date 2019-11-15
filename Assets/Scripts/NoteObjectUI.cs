@@ -20,7 +20,7 @@ public class NoteObjectUI : MonoBehaviour
     void Update()
     {
         beatDistance = thisRect.position.x - BeatMonitorRect.position.x;
-        if (beatDistance < 25f && beatDistance > -25f)
+        if (beatDistance < 30f && beatDistance > -30f)
         {
             if (!canBePressed)
             {
@@ -42,16 +42,17 @@ public class NoteObjectUI : MonoBehaviour
 
             if (canBePressed)
             {
-                if (beatDistance > 10)
+                if (beatDistance > 20 || beatDistance < -20)
                 {
-                    GameManager.instance.PerfectHit();
-                }else if (beatDistance > -10)
+                    GameManager.instance.NormalHit();
+                }
+                else if (beatDistance > 10 || beatDistance < -10)
                 {
                     GameManager.instance.GoodHit();
                 }
-                else
+                else if (beatDistance > -10 && beatDistance < 10)
                 {
-                    GameManager.instance.NormalHit();
+                    GameManager.instance.PerfectHit();
                 }
                 gameObject.SetActive(false);
             }
