@@ -21,11 +21,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 06f00311a44904b4b95ece71cd781ff9, type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: 21300000, guid: 2e90ed11b5dd424419cddc206a457b97, type: 3}
-    - time: 0.33333334
+    - time: 0.16666667
       value: {fileID: 21300000, guid: fdc1906f385641e4e84054754b6aa12a, type: 3}
-    - time: 0.5
+    - time: 0.25
       value: {fileID: 21300000, guid: 06f00311a44904b4b95ece71cd781ff9, type: 3}
     attribute: m_Sprite
     path: body
@@ -34,11 +34,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 900bf766d7bf3134da0842475189f767, type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: 21300000, guid: 15a2b1c60da301e43b04bdf1c7d84bd5, type: 3}
-    - time: 0.33333334
+    - time: 0.16666667
       value: {fileID: 21300000, guid: 4be9b5054e6e3014cbd9045a4a96721c, type: 3}
-    - time: 0.5
+    - time: 0.25
       value: {fileID: 21300000, guid: 900bf766d7bf3134da0842475189f767, type: 3}
     attribute: m_Sprite
     path: clothes
@@ -47,11 +47,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 773fffc8bf5cbfe409023bee2cf521f9, type: 3}
-    - time: 0.16666667
+    - time: 0.083333336
       value: {fileID: 21300000, guid: b8cd75409dda70940b4a5f3b7031eea5, type: 3}
-    - time: 0.33333334
+    - time: 0.16666667
       value: {fileID: 21300000, guid: bf4c1aa51f3d0bb4784600d490de3f3e, type: 3}
-    - time: 0.5
+    - time: 0.25
       value: {fileID: 21300000, guid: 773fffc8bf5cbfe409023bee2cf521f9, type: 3}
     attribute: m_Sprite
     path: weapon
@@ -103,7 +103,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51666665
+    m_StopTime: 0.26666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

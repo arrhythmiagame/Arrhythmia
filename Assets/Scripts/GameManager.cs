@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject resultsScreen;
     public BeatMonitor beatMonitor;
-    public Text percentHitText, normalsText, goodsText, perfectsText, missesText, rankText, finalScoreText;
+    public Text percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
     public Color normalColor, goodColor, perfectColor, missedColor;
 
     // Start is called before the first frame update
@@ -49,10 +49,8 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         totalNotes = FindObjectsOfType<NoteObjectUI>().Length;
     }
-    // Starts the animation of the character after the start delay
-    IEnumerator StartAnimation()
+    public void IdlePulse()
     {
-        yield return new WaitForSeconds(theAnimator.GetFloat("StartDelay"));
         theAnimator.SetBool("Paused", false);
     }
     // Allows input for a certain amount of time based on the beat scroller
@@ -66,74 +64,45 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1/theBS.beatTempoSeconds);
         inputAllowed = false;
     }
+    void LateUpdate()
+    {
+        string currentAnimationName = theAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+        if(currentAnimationName == "Character_Idle")
+        {
+            theAnimator.SetBool("Paused", true);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (!debugMode)
+        if (!startPlaying)
         {
-            if (!startPlaying)
+            if (ActionButtonPressed())
             {
-                if (ActionButtonPressed())
-                {
-                    startPlaying = true;
-                    theBS.hasStarted = true;
-                    theMusic.Play();
-                    StartCoroutine(StartAnimation());
-                }
+                startPlaying = true;
+                theBS.hasStarted = true;
+                theMusic.Play();
             }
-            else
+        }
+        else
+        {
+            if (!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
             {
-                if (!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
-                {
-                    theAnimator.SetBool("Paused", true);
-                    normalsText.text = "" + normalHits;
-                    goodsText.text = goodHits.ToString();
-                    perfectsText.text = perfectHits.ToString();
-                    missesText.text = "" + missedNotes;
+                theAnimator.SetBool("Paused", true);
+                normalsText.text = "" + normalHits;
+                goodsText.text = goodHits.ToString();
+                perfectsText.text = perfectHits.ToString();
+                missesText.text = "" + missedNotes;
 
-                    float totalHit = normalHits + goodHits + perfectHits;
-                    float percentHit = (totalHit / totalNotes) * 100f;
+                float totalHit = normalHits + goodHits + perfectHits;
+                float percentHit = (totalHit / totalNotes) * 100f;
 
-                    percentHitText.text = percentHit.ToString("F1") + "%";
+                percentHitText.text = percentHit.ToString("F1") + "%";
 
-                    string rankVal = "F";
-                    if (percentHit > 60f)
-                    {
-                        rankVal = "D";
-                        if (percentHit > 70f)
-                        {
-                            rankVal = "C";
-                            if (percentHit > 80f)
-                            {
-                                rankVal = "B";
-                                if (percentHit > 90f)
-                                {
-                                    rankVal = "A";
-                                    if (percentHit > 95f)
-                                    {
-                                        rankVal = "S";
-                                        if (percentHit == 100f)
-                                        {
-                                            rankVal = "SS";
-                                        }
+                finalScoreText.text = currentScore.ToString();
 
-                                    }
+                resultsScreen.SetActive(true);
 
-                                }
-
-                            }
-
-                        }
-
-                    }
-
-                    rankText.text = rankVal;
-
-                    finalScoreText.text = currentScore.ToString();
-
-                    resultsScreen.SetActive(true);
-
-                }
             }
         }
     }
@@ -194,9 +163,5 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Block")) return true;
         if (Input.GetButtonDown("Ultimate")) return true;
         return false;
-    }
-    void OnGUI()
-    {
-        GUI.Label(new Rect(0, 0, 100, 100), (1.0f / Time.smoothDeltaTime).ToString());
     }
 }
