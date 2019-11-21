@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[ExecuteInEditMode]
 public class InputManager : MonoBehaviour
 {
     public float horizontalValue;
@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
     public string[] controllerNames;
 
 
-    void FixedUpdate()
+    void Update()
     {
         horizontalValue = Input.GetAxis("Horizontal");
         verticalValue = Input.GetAxis("Vertical");

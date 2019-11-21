@@ -173,6 +173,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &9949460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +264,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &27924066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +355,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &36135179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,6 +446,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &54480632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,6 +537,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &64629946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +628,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &79403023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,6 +799,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &95018568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +890,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &121053276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,6 +981,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &127291843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1063,6 +1072,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &150866255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,6 +1163,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &154937317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,6 +1296,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &187235520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,6 +1387,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &196825470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1545,6 +1558,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &229442400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,6 +1770,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &242914272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,6 +2022,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &308143992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2097,6 +2113,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &308671317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,6 +2204,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &317137223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,6 +2374,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &338053368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2446,6 +2465,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &361903249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,6 +2556,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &378935845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2626,6 +2647,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &379278336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,6 +2738,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &401812937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2806,6 +2829,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &408714675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,6 +2920,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &421048748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2986,6 +3011,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &438921191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3076,6 +3102,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &454782978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3166,6 +3193,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &468365477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3370,7 +3398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571efbf94b3dfb94cb9604e005e30053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingPosition: {x: 0, y: 0, z: 0}
   followTarget: {fileID: 747005989}
+  targetPos: {x: 0, y: 0, z: 0}
   moveSpeed: 1
 --- !u!20 &519420031
 Camera:
@@ -3427,7 +3457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -3502,6 +3532,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &551530186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3592,6 +3623,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &565483890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3719,6 +3751,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!1 &595279074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3852,6 +3885,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &618780558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3942,6 +3976,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &620873713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4032,6 +4067,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &625324500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4342,6 +4378,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &646521482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4474,6 +4511,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &664988088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4685,6 +4723,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &726898653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4775,6 +4814,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &729924557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4890,7 +4930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745663031
 GameObject:
@@ -5021,9 +5061,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2.5
   dashMultiplier: 10
+  isoRenderer: {fileID: 0}
   currentPos: {x: 0, y: 0}
   newPos: {x: 0, y: 0}
   gm: {fileID: 1676720004}
+  rbody: {fileID: 0}
 --- !u!4 &747005989
 Transform:
   m_ObjectHideFlags: 0
@@ -5040,7 +5082,7 @@ Transform:
   - {fileID: 303122798}
   - {fileID: 82332964}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &747005990
 PolygonCollider2D:
@@ -5334,6 +5376,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &770623439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5424,6 +5467,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &775307245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5514,6 +5558,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &795377791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5604,6 +5649,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &800357556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5694,6 +5740,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &838364688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5863,6 +5910,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &883352574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5995,6 +6043,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &903950074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6085,6 +6134,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &909794256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6156,7 +6206,7 @@ Transform:
   - {fileID: 1499461803}
   - {fileID: 1285972428}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &929501707
 MonoBehaviour:
@@ -6267,6 +6317,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &937388001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6357,6 +6408,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &942235224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6521,6 +6573,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1019277115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6611,6 +6664,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1036001042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6743,6 +6797,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1075463986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6833,6 +6888,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1105080553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6923,6 +6979,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1125630838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7012,6 +7069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7830e05e5a2ee3041ad65feac1289061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theImage: {fileID: 0}
   theBS: {fileID: 1305785883}
 --- !u!114 &1126568174
 MonoBehaviour:
@@ -7182,6 +7240,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1232932991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7272,6 +7331,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1261223874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7362,6 +7422,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1272014574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7577,6 +7638,7 @@ MonoBehaviour:
   beatTempo: 160
   beatTempoSeconds: 0
   hasStarted: 0
+  theTransform: {fileID: 0}
 --- !u!1 &1321374486
 GameObject:
   m_ObjectHideFlags: 0
@@ -7714,6 +7776,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1375127567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7804,6 +7867,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1420883192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7934,6 +7998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0631f36ac84554335b5b1f70f25312fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  lastDirection: 0
 --- !u!1 &1499461802
 GameObject:
   m_ObjectHideFlags: 0
@@ -8114,6 +8180,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1518848814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8246,6 +8313,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1525011934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8336,6 +8404,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1547587513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8426,6 +8495,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1552210050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8516,6 +8586,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1586424003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8606,6 +8677,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1598441218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8775,6 +8847,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1603265761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8907,7 +8980,7 @@ RectTransform:
   - {fileID: 1126568172}
   - {fileID: 766832846}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8967,6 +9040,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1613228244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9095,6 +9169,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1647272286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9185,6 +9260,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1648938894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9275,6 +9351,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1656550096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9435,10 +9512,26 @@ MonoBehaviour:
   perfectsText: {fileID: 723331160}
   missesText: {fileID: 325538177}
   finalScoreText: {fileID: 745663033}
-  normalColor: {r: 1, g: 0.56078434, b: 0, a: 1}
-  goodColor: {r: 1, g: 1, b: 0, a: 1}
-  perfectColor: {r: 0, g: 1, b: 0, a: 1}
-  missedColor: {r: 1, g: 0, b: 0, a: 1}
+  normalColor:
+    r: 1
+    g: 0.56078434
+    b: 0
+    a: 1
+  goodColor:
+    r: 1
+    g: 1
+    b: 0
+    a: 1
+  perfectColor:
+    r: 0
+    g: 1
+    b: 0
+    a: 1
+  missedColor:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
 --- !u!4 &1676720005
 Transform:
   m_ObjectHideFlags: 0
@@ -9453,7 +9546,7 @@ Transform:
   - {fileID: 1665987928}
   - {fileID: 517334835}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694737852
 GameObject:
@@ -9508,6 +9601,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1694737855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9598,6 +9692,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1699616992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9688,6 +9783,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1744527334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9778,6 +9874,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1786469868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9868,6 +9965,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1787213985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9984,62 +10082,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791990392}
   m_CullTransparentMesh: 0
---- !u!1 &1825754392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1825754394}
-  - component: {fileID: 1825754393}
-  m_Layer: 0
-  m_Name: inputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1825754393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825754392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b2aac1491f38d47994e3ec42257cad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalValue: 0
-  verticalValue: 0
-  leftStickHorizontal: 0
-  leftStickVertical: 0
-  rightStickHorizontal: 0
-  rightStickVertical: 0
-  dashValue: 0
-  attackValue: 0
-  blockValue: 0
-  ultimateValue: 0
-  pauseValue: 0
-  jsButton0: 0
-  controllerNames: []
---- !u!4 &1825754394
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825754392}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5959532, y: 5.193035, z: -0.47265625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839346116
 GameObject:
   m_ObjectHideFlags: 0
@@ -10093,6 +10135,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1839346119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10336,6 +10379,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1917677481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10494,7 +10538,7 @@ Transform:
   m_Children:
   - {fileID: 630962313}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1975598245
 GameObject:
@@ -10549,6 +10593,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1975598248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10639,6 +10684,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &1977438544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10966,6 +11012,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &2033594398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11135,6 +11182,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &2054107604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11225,6 +11273,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &2059599780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11315,6 +11364,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &2086820325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11405,6 +11455,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &2101883357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11537,6 +11588,7 @@ MonoBehaviour:
   canBePressed: 0
   beatDistance: 0
   BeatMonitorRect: {fileID: 1126568172}
+  thisRect: {fileID: 0}
 --- !u!114 &2147039581
 MonoBehaviour:
   m_ObjectHideFlags: 0
