@@ -1,57 +1,80 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class IsometricPlayerMovementController : MonoBehaviour
 {
 
-    public float movementSpeed = 1f;
     public float dashMultiplier = 2f;
-    IsometricCharacterRenderer isoRenderer;
     public Vector2 currentPos;
     public Vector2 newPos;
     public GameManager gm;
     Rigidbody2D rbody;
+    [Header("Rewired Stuff")]
+    // The Rewired player id of this character
+    public int playerId = 0;
+
+    // The movement speed of this character
+    public float moveSpeed = 3.0f;
+
+    private Player player; // The Rewired Player
+    private Vector3 moveVector;
+    private bool dash;
+
 
     private void Awake()
     {
         rbody = GetComponent<Rigidbody2D>();
-        isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         currentPos = rbody.position;
         newPos = currentPos;
-        gm = GameManager.instance;
 
+        // Get the Rewired Player object for this player and keep it for the duration of the character's lifetime
+        player = ReInput.players.GetPlayer(playerId);
     }
 
-
+    private void Start()
+    {
+        gm = GameManager.instance;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        currentPos = rbody.position;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float lsHorizontalInput = Input.GetAxis("Leftstick Horizontal");
-        if(lsHorizontalInput != 0)
-        {
-            horizontalInput = lsHorizontalInput;
-        }
-        float verticalInput = Input.GetAxis("Vertical");
-        float lsVerticalInput = Input.GetAxis("Leftstick Vertical");
-        if (lsVerticalInput != 0)
-        {
-            verticalInput = lsVerticalInput;
-        }
-        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
-        inputVector = Vector2.ClampMagnitude(inputVector, 1);
-        Vector2 movement = inputVector * movementSpeed * Time.deltaTime;
-        if (Input.GetButtonDown("Dash"))
-        {
-            movement = inputVector * movementSpeed * dashMultiplier * Time.deltaTime;
-        }
-        newPos = currentPos + movement;
-        rbody.MovePosition(newPos);
+        GetInput();
+        ProcessInput();
     }
 
-    void CharacterDash(Vector2 inputVector)
+    private void GetInput()
     {
+        // Get the input from the Rewired Player. All controllers that the Player owns will contribute, so it doesn't matter
+        // whether the input is coming from a joystick, the keyboard, mouse, or a custom controller.
+
+        moveVector.x = player.GetAxis("Move Horizontal"); // get input by name or action id
+        moveVector.y = player.GetAxis("Move Vertical");
+        dash = player.GetButtonDown("Dash");
+    }
+
+    private void ProcessInput()
+    {
+        // Process movement
+        if (moveVector.x != 0.0f || moveVector.y != 0.0f)
+        {
+            Move(moveVector * moveSpeed * Time.deltaTime);
+        }
+
+        // Process fire
+        if (dash)
+        {
+            if (gm.CheckInputAllowed())
+            {
+                Move(moveVector * moveSpeed * dashMultiplier * Time.deltaTime);
+            }
+        }
+    }
+    void Move(Vector2 movement)
+    {
+        currentPos = rbody.position;
+        newPos = currentPos + movement;
+        rbody.MovePosition(newPos);
     }
 }

@@ -17,7 +17,7 @@ public class NoteObjectUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         beatDistance = thisRect.position.x - BeatMonitorRect.position.x;
         if (beatDistance < 30f && beatDistance > -30f)

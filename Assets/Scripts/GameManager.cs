@@ -40,11 +40,13 @@ public class GameManager : MonoBehaviour
     public Color normalColor, goodColor, perfectColor, missedColor;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         Application.targetFrameRate = 30;
-        instance = this;
-
         scoreText.text = "Score: 0";
         currentMultiplier = 1;
         totalNotes = FindObjectsOfType<NoteObjectUI>().Length;
@@ -54,15 +56,13 @@ public class GameManager : MonoBehaviour
         theAnimator.SetBool("Paused", false);
     }
     // Allows input for a certain amount of time based on the beat scroller
+    public bool CheckInputAllowed()
+    {
+        return inputAllowed;
+    }
     public void AllowInput()
     {
         inputAllowed = true;
-        StartCoroutine(AllowInputEnum());
-    }
-    IEnumerator AllowInputEnum()
-    {
-        yield return new WaitForSeconds(1/theBS.beatTempoSeconds);
-        inputAllowed = false;
     }
     void LateUpdate()
     {
@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void NoteHit()
     {
+        inputAllowed = false;
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
             multiplierTracker++;
@@ -149,6 +150,8 @@ public class GameManager : MonoBehaviour
 
     public void NoteMissed()
     {
+        inputAllowed = false;
+        currentMultiplier = 1;
         currentMultiplier = 1;
         multiplierTracker = 0;
         multiplierText.text = "Multiplier: x" + currentMultiplier;
