@@ -1,3 +1,13 @@
+1.1.29.4:
+    
+    Changes:
+      - Increased stick dead zones on Nintendo Switch Pro Controllers on all non-Switch console platforms.
+    
+    Bug Fixes:
+      - Fixed transposed Options and Menu button mappings on Stadia Controller definition on all platforms.
+      - Fixed transposed Options and Menu button mappings in Gamepad Template for Stadia Controller.
+      - Fixed inverted Right Stick Y mapping on Nintendo Switch Pro Controller on OSX Standalone, Native.
+
 1.1.29.3:
 
     Changes:

@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     public Text percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
     public Color normalColor, goodColor, perfectColor, missedColor;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         instance = this;
@@ -56,13 +55,24 @@ public class GameManager : MonoBehaviour
         theAnimator.SetBool("Paused", false);
     }
     // Allows input for a certain amount of time based on the beat scroller
-    public bool CheckInputAllowed()
-    {
-        return inputAllowed;
-    }
     public void AllowInput()
     {
         inputAllowed = true;
+    }
+    // Disable input at end of frame
+    public void DisableInput()
+    {
+        StartCoroutine(DisableInputCoro());
+    }
+    private IEnumerator DisableInputCoro()
+    {
+        yield return new WaitForEndOfFrame();
+        inputAllowed = false;
+    }
+    // Checks if input is allowed
+    public bool CheckInputAllowed()
+    {
+        return inputAllowed;
     }
     void LateUpdate()
     {
@@ -72,7 +82,6 @@ public class GameManager : MonoBehaviour
             theAnimator.SetBool("Paused", true);
         }
     }
-    // Update is called once per frame
     void Update()
     {
         if (!startPlaying)
@@ -133,7 +142,6 @@ public class GameManager : MonoBehaviour
 
     public void NoteHit()
     {
-        inputAllowed = false;
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
             multiplierTracker++;
@@ -150,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     public void NoteMissed()
     {
-        inputAllowed = false;
+        DisableInput();
         currentMultiplier = 1;
         currentMultiplier = 1;
         multiplierTracker = 0;

@@ -6666,11 +6666,11 @@ MonoBehaviour:
       joystickId2: 0
       splitAxis: 0
     - templateId: 14
-      joystickId: 13
+      joystickId: 14
       joystickId2: 0
       splitAxis: 0
     - templateId: 15
-      joystickId: 14
+      joystickId: 13
       joystickId2: 0
       splitAxis: 0
     - templateId: 16

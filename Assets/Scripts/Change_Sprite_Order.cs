@@ -20,7 +20,6 @@ public class Change_Sprite_Order : MonoBehaviour
                     endDelta = thisDelta;
                 }
             }
-            Debug.Log(endDelta);
             foreach (var changingSprite in changingSprites)
             {
                 var newOrder = changingSprite.sortingOrder + endDelta;

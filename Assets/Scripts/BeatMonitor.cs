@@ -12,12 +12,12 @@ public class BeatMonitor : MonoBehaviour
     {
         theImage = this.gameObject.GetComponent<Image>();
     }
-    void Update()
+    void FixedUpdate()
     {
         float alpha = theImage.color.a;
         if (alpha > 0.25f)
         {
-            alpha -= theBS.beatTempoSeconds;
+            alpha -= theBS.beatTempoSeconds * Time.deltaTime;
             theImage.color = new Color(theImage.color.r, theImage.color.g, theImage.color.b, alpha);
         }
         else
