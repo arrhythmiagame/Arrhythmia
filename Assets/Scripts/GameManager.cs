@@ -1,43 +1,45 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
-    public bool debugMode = false;
-
-    public bool inputAllowed = false;
-    public AudioSource theMusic;
-    public bool startPlaying;
-    public BeatScrollerUI theBS;
-    public Animator theAnimator;
-
+    [Header("Public Variables")]
     public static GameManager instance;
 
-    public int currentScore;
-    public int scorePerNote = 100;
-    public int scorePerGoodNote = 125;
-    public int scorePerPerfectNote = 150;
+    [Header("Booleans")]
+    [SerializeField] bool inputAllowed = false;
+    [SerializeField] bool startPlaying;
 
-    public Text scoreText;
-    public Text multiplierText;
+    [Header("References")]
+    [SerializeField] AudioSource theMusic;
+    [SerializeField] BeatScrollerUI theBS;
+    [SerializeField] Animator theAnimator;
+    [SerializeField] Text scoreText;
+    [SerializeField] Text multiplierText;
+    [SerializeField] GameObject resultsScreen;
+    [SerializeField] BeatMonitor beatMonitor;
+    [SerializeField] Text percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
 
-    public int currentMultiplier;
-    public int multiplierTracker;
-    public int[] multiplierThresholds;
+    [Header("Score")]
+    [SerializeField] int currentScore;
+    [SerializeField] int scorePerNote = 100;
+    [SerializeField] int scorePerGoodNote = 125;
+    [SerializeField] int scorePerPerfectNote = 150;
+    [SerializeField] int currentMultiplier;
+    [SerializeField] int multiplierTracker;
+    [SerializeField] int[] multiplierThresholds;
 
-    public float totalNotes;
-    public float normalHits;
-    public float goodHits;
-    public float perfectHits;
-    public float missedNotes;
+    [Header("Notes")]
+    [SerializeField] float totalNotes;
+    [SerializeField] float normalHits;
+    [SerializeField] float goodHits;
+    [SerializeField] float perfectHits;
+    [SerializeField] float missedNotes;
 
-    public GameObject resultsScreen;
-    public BeatMonitor beatMonitor;
-    public Text percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
-    public Color normalColor, goodColor, perfectColor, missedColor;
+    [Header("Colors")]
+    [SerializeField] Color normalColor;
+    [SerializeField] Color goodColor, perfectColor, missedColor;
 
     private void Awake()
     {

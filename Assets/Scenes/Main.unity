@@ -3186,7 +3186,7 @@ GameObject:
   - component: {fileID: 517334835}
   - component: {fileID: 517334834}
   m_Layer: 0
-  m_Name: spoopy
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7460,7 +7460,7 @@ GameObject:
   - component: {fileID: 1305785882}
   - component: {fileID: 1305785883}
   m_Layer: 5
-  m_Name: DrumAndBass
+  m_Name: Spoopy Percussion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9330,26 +9330,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d1c94c7a09b4c4cb74f2b1a8b6ae22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 0
   inputAllowed: 0
-  theMusic: {fileID: 517334834}
   startPlaying: 0
+  theMusic: {fileID: 517334834}
   theBS: {fileID: 1305785883}
   theAnimator: {fileID: 747005992}
-  currentScore: 0
-  scorePerNote: 100
-  scorePerGoodNote: 125
-  scorePerPerfectNote: 150
   scoreText: {fileID: 1791990394}
   multiplierText: {fileID: 2046179001}
-  currentMultiplier: 1
-  multiplierTracker: 0
-  multiplierThresholds: 040000000800000010000000
-  totalNotes: 0
-  normalHits: 0
-  goodHits: 0
-  perfectHits: 0
-  missedNotes: 0
   resultsScreen: {fileID: 766832845}
   beatMonitor: {fileID: 1126568173}
   percentHitText: {fileID: 1903861623}
@@ -9358,6 +9345,18 @@ MonoBehaviour:
   perfectsText: {fileID: 723331160}
   missesText: {fileID: 325538177}
   finalScoreText: {fileID: 745663033}
+  currentScore: 0
+  scorePerNote: 100
+  scorePerGoodNote: 125
+  scorePerPerfectNote: 150
+  currentMultiplier: 1
+  multiplierTracker: 0
+  multiplierThresholds: 040000000800000010000000
+  totalNotes: 0
+  normalHits: 0
+  goodHits: 0
+  perfectHits: 0
+  missedNotes: 0
   normalColor: {r: 1, g: 0.56078434, b: 0, a: 1}
   goodColor: {r: 1, g: 1, b: 0, a: 1}
   perfectColor: {r: 0, g: 1, b: 0, a: 1}
@@ -10123,6 +10122,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 0
+    - _id: 3
+      _name: Pause
+      _type: 1
+      _descriptiveName: Pause
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 0
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -10132,7 +10140,7 @@ MonoBehaviour:
     actionCategoryMap:
       list:
       - categoryId: 0
-        actionIds: 000000000100000002000000
+        actionIds: 00000000010000000200000003000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -10222,6 +10230,17 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 3
+        _elementType: 1
+        _elementIdentifierId: 14
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     - id: 1
       categoryId: 0
       layoutId: 0
@@ -10255,6 +10274,17 @@ MonoBehaviour:
         _actionId: 2
         _elementType: 1
         _elementIdentifierId: 6
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 3
+        _elementType: 1
+        _elementIdentifierId: 13
         _axisRange: 0
         _invert: 0
         _axisContribution: 0
@@ -10331,7 +10361,7 @@ MonoBehaviour:
     controllerMapLayoutManagerRuleSets: []
     controllerMapEnablerRuleSets: []
     playerIdCounter: 2
-    actionIdCounter: 3
+    actionIdCounter: 4
     actionCategoryIdCounter: 1
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 1
