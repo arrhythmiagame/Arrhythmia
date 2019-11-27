@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,9 +53,61 @@ public class GameManager : MonoBehaviour
         currentMultiplier = 1;
         totalNotes = FindObjectsOfType<NoteObjectUI>().Length;
     }
+    void LateUpdate()
+    {
+        CheckIdle();
+    }
+    void Update()
+    {
+        if (!startPlaying)
+        {
+            if (ActionButtonPressed())
+            {
+                startPlaying = true;
+                theBS.hasStarted = true;
+                theMusic.Play();
+            }
+        }
+        else
+        {
+            if (!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
+            {
+                ActivateScoreDisplay();
+            }
+        }
+    }
+    // TODO
+    private void ActivateScoreDisplay()
+    {
+        theAnimator.SetBool("Paused", true);
+        normalsText.text = "" + normalHits;
+        goodsText.text = goodHits.ToString();
+        perfectsText.text = perfectHits.ToString();
+        missesText.text = "" + missedNotes;
+
+        float totalHit = normalHits + goodHits + perfectHits;
+        float percentHit = (totalHit / totalNotes) * 100f;
+
+        percentHitText.text = percentHit.ToString("F1") + "%";
+
+        finalScoreText.text = currentScore.ToString();
+
+        resultsScreen.SetActive(true);
+    }
+
+    // Allows the idle animation to start
     public void IdlePulse()
     {
         theAnimator.SetBool("Paused", false);
+    }
+    // Checks if the idle animation is running and pauses it if it is
+    private void CheckIdle()
+    {
+        string currentAnimationName = theAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+        if (currentAnimationName == "Character_Idle")
+        {
+            theAnimator.SetBool("Paused", true);
+        }
     }
     // Allows input for a certain amount of time based on the beat scroller
     public void AllowInput()
@@ -75,47 +128,6 @@ public class GameManager : MonoBehaviour
     public bool CheckInputAllowed()
     {
         return inputAllowed;
-    }
-    void LateUpdate()
-    {
-        string currentAnimationName = theAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
-        if(currentAnimationName == "Character_Idle")
-        {
-            theAnimator.SetBool("Paused", true);
-        }
-    }
-    void Update()
-    {
-        if (!startPlaying)
-        {
-            if (ActionButtonPressed())
-            {
-                startPlaying = true;
-                theBS.hasStarted = true;
-                theMusic.Play();
-            }
-        }
-        else
-        {
-            if (!theMusic.isPlaying && !resultsScreen.activeInHierarchy)
-            {
-                theAnimator.SetBool("Paused", true);
-                normalsText.text = "" + normalHits;
-                goodsText.text = goodHits.ToString();
-                perfectsText.text = perfectHits.ToString();
-                missesText.text = "" + missedNotes;
-
-                float totalHit = normalHits + goodHits + perfectHits;
-                float percentHit = (totalHit / totalNotes) * 100f;
-
-                percentHitText.text = percentHit.ToString("F1") + "%";
-
-                finalScoreText.text = currentScore.ToString();
-
-                resultsScreen.SetActive(true);
-
-            }
-        }
     }
 
     public void NormalHit()
