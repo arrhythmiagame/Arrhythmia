@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    // TODO
+    // TODO Replace this with better score tracking.
     private void ActivateScoreDisplay()
     {
         theAnimator.SetBool("Paused", true);
