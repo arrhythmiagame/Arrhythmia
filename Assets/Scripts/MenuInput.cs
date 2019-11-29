@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
-using System;
+using TMPro;
 public class MenuInput : MonoBehaviour
 {
     [SerializeField] GameObject[] inputs;
     [SerializeField] Button backButton;
     private Button theButton;
     private Slider theSlider;
+    private TMP_InputField theInput;
     private int inputIndex = 0;
     // Rewired Stuff
     [SerializeField] int playerId = 0;
@@ -109,6 +110,15 @@ public class MenuInput : MonoBehaviour
         else
         {
             theSlider = null;
+        }
+        if (inputs[inputIndex].GetComponents<TMP_InputField>().Length > 0)
+        {
+            theInput = inputs[inputIndex].GetComponent<TMP_InputField>();
+            theInput.Select();
+        }
+        else
+        {
+            theInput = null;
         }
         if (inputs[inputIndex].GetComponents<Button>().Length > 0)
         {
