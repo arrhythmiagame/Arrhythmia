@@ -1,52 +1,48 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Rewired;
-using TMPro;
 
-public class MenuInput : MonoBehaviour
+public class PickerInput : MonoBehaviour
 {
+    [SerializeField] MenuInput mainMenu;
     [SerializeField] GameObject[] inputs;
     [SerializeField] Button backButton;
     [SerializeField] float moveSpeed = 1f;
     private Button theButton;
     private Slider theSlider;
-    private TMP_InputField theInput;
+    private BoxSlider theBoxSlider;
     private int inputIndex = 0;
-    private bool allowInput = true;
     private Vector2 rightStickVector;
     // Rewired Stuff
     [SerializeField] int playerId = 0;
-    private Player player; 
+    private Player player;
     private bool menuUp;
     private bool menuDown;
+    private bool menuRight;
+    private bool menuLeft;
     private bool confirm;
     private bool cancel;
-
-    private void Start()
-    {
-        inputIndex = 0;
-        SelectInput();
-        player = ReInput.players.GetPlayer(playerId);
-    }
     private void OnEnable()
     {
-        inputIndex = 0;
         SelectInput();
+        mainMenu.ToggleInputAllowed();
+        player = ReInput.players.GetPlayer(playerId);
     }
-
+    private void OnDisable()
+    {
+        mainMenu.ToggleInputAllowed();
+    }
     private void Update()
     {
-        if (allowInput)
-        {
-            GetInput();
-            ProcessInput();
-            SelectInput();
-        }
-    }
+        GetInput();
+        ProcessInput();
+}
     private void GetInput()
     {
         menuUp = player.GetButtonDown("MenuUp");
         menuDown = player.GetButtonDown("MenuDown");
+        menuRight = player.GetButtonDown("MenuRight");
+        menuLeft = player.GetButtonDown("MenuLeft");
         confirm = player.GetButtonDown("Confirm");
         cancel = player.GetButtonDown("Cancel");
         rightStickVector.x = player.GetAxis("RightStickHorizontal");
@@ -58,11 +54,11 @@ public class MenuInput : MonoBehaviour
         {
             MoveSlider(rightStickVector * moveSpeed * Time.deltaTime);
         }
-        if (menuDown)
+        if (menuDown || menuRight)
         {
             SelectNextButton();
         }
-        if (menuUp)
+        if (menuUp || menuLeft)
         {
             SelectPreviousButton();
         }
@@ -75,21 +71,24 @@ public class MenuInput : MonoBehaviour
         }
         if (cancel)
         {
-            if(backButton != null)
+            if (backButton != null)
             {
                 backButton.onClick.Invoke();
             }
         }
     }
-
     private void MoveSlider(Vector2 movement)
     {
         if (theSlider != null)
         {
             theSlider.value += movement.x;
         }
+        if (theBoxSlider != null)
+        {
+            theBoxSlider.value += movement.x;
+            theBoxSlider.valueY += movement.y;
+        }
     }
-
     private void SelectPreviousButton()
     {
         inputIndex -= 1;
@@ -105,11 +104,12 @@ public class MenuInput : MonoBehaviour
                 inputIndex = inputs.Length - 1;
             }
         }
+        SelectInput();
     }
     private void SelectNextButton()
     {
         inputIndex += 1;
-        if(inputIndex >= inputs.Length)
+        if (inputIndex >= inputs.Length)
         {
             inputIndex = 0;
         }
@@ -121,6 +121,7 @@ public class MenuInput : MonoBehaviour
                 inputIndex = 0;
             }
         }
+        SelectInput();
     }
     private void SelectInput()
     {
@@ -133,14 +134,14 @@ public class MenuInput : MonoBehaviour
         {
             theSlider = null;
         }
-        if (inputs[inputIndex].GetComponents<TMP_InputField>().Length > 0)
+        if (inputs[inputIndex].GetComponents<BoxSlider>().Length > 0)
         {
-            theInput = inputs[inputIndex].GetComponent<TMP_InputField>();
-            theInput.Select();
+            theBoxSlider = inputs[inputIndex].GetComponent<BoxSlider>();
+            theBoxSlider.Select();
         }
         else
         {
-            theInput = null;
+            theBoxSlider = null;
         }
         if (inputs[inputIndex].GetComponents<Button>().Length > 0)
         {
@@ -153,26 +154,4 @@ public class MenuInput : MonoBehaviour
         }
     }
 
-    public void ToggleInputAllowed()
-    {
-        if (allowInput)
-        {
-            allowInput = false;
-        }
-        else
-        {
-            allowInput = true;
-        }
-    }
-    public void ActivateKeyboard()
-    {
-        if (ReInput.controllers.joystickCount == 0)
-        {
-            return; // no joysticks, nothing to do
-        }
-        else
-        {
-            Debug.Log("Need to implement keyboard"); // TODO implement keyboard
-        }
-    }
 }
