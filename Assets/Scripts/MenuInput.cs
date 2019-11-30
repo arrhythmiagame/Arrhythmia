@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using Rewired;
 using TMPro;
 
@@ -40,7 +41,6 @@ public class MenuInput : MonoBehaviour
         {
             GetInput();
             ProcessInput();
-            SelectInput();
         }
     }
     private void GetInput()
@@ -105,6 +105,7 @@ public class MenuInput : MonoBehaviour
                 inputIndex = inputs.Length - 1;
             }
         }
+        SelectInput();
     }
     private void SelectNextButton()
     {
@@ -121,9 +122,11 @@ public class MenuInput : MonoBehaviour
                 inputIndex = 0;
             }
         }
+        SelectInput();
     }
     private void SelectInput()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         if (inputs[inputIndex].GetComponents<Slider>().Length > 0)
         {
             theSlider = inputs[inputIndex].GetComponent<Slider>();

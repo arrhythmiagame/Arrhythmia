@@ -12,14 +12,14 @@ public class MainMenu : MonoBehaviour
     private string folderPath;
     [Header("References")]
     [SerializeField] GameObject loadButton;
+    [SerializeField] GameObject startMenu;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject loadMenu;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject audioMenu;
     [SerializeField] GameObject controlsMenu;
-    private void Awake()
+    private void Start()
     {
-        ActivateMainMenu();
         InitializeGame();
     }
     private void InitializeGame()
@@ -44,6 +44,7 @@ public class MainMenu : MonoBehaviour
         {
             loadButton.SetActive(true);
         }
+        ActivateStartMenu();
     }
     // Create a new game
     public void NewGame()
@@ -67,11 +68,17 @@ public class MainMenu : MonoBehaviour
     }
     public void CloseOutMenus()
     {
+        startMenu.SetActive(false);
         mainMenu.SetActive(false);
         loadMenu.SetActive(false);
         optionsMenu.SetActive(false);
         audioMenu.SetActive(false);
         controlsMenu.SetActive(false);
+    }
+    public void ActivateStartMenu()
+    {
+        CloseOutMenus();
+        startMenu.SetActive(true);
     }
     public void ActivateMainMenu()
     {
