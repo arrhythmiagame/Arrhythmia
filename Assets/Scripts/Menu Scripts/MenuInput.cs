@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Rewired;
 using TMPro;
-
 public class MenuInput : MonoBehaviour
 {
     [SerializeField] GameObject[] inputs;
@@ -20,21 +19,21 @@ public class MenuInput : MonoBehaviour
     private Player player; 
     private bool menuUp;
     private bool menuDown;
+    private bool menuRight;
+    private bool menuLeft;
     private bool confirm;
     private bool cancel;
-
     private void Start()
     {
+        player = ReInput.players.GetPlayer(playerId);
         inputIndex = 0;
         SelectInput();
-        player = ReInput.players.GetPlayer(playerId);
     }
     private void OnEnable()
     {
         inputIndex = 0;
         SelectInput();
     }
-
     private void Update()
     {
         if (allowInput)
@@ -47,6 +46,8 @@ public class MenuInput : MonoBehaviour
     {
         menuUp = player.GetButtonDown("MenuUp");
         menuDown = player.GetButtonDown("MenuDown");
+        menuRight = player.GetButtonDown("MenuRight");
+        menuLeft = player.GetButtonDown("MenuLeft");
         confirm = player.GetButtonDown("Confirm");
         cancel = player.GetButtonDown("Cancel");
         rightStickVector.x = player.GetAxis("RightStickHorizontal");
@@ -57,6 +58,14 @@ public class MenuInput : MonoBehaviour
         if (rightStickVector.x != 0.0f || rightStickVector.y != 0.0f)
         {
             MoveSlider(rightStickVector * moveSpeed * Time.deltaTime);
+        }
+        if (menuRight)
+        {
+            MoveSlider(new Vector2(1, 0) * moveSpeed * Time.deltaTime);
+        }
+        if (menuLeft)
+        {
+            MoveSlider(new Vector2(-1, 0) * moveSpeed * Time.deltaTime);
         }
         if (menuDown)
         {
@@ -81,7 +90,6 @@ public class MenuInput : MonoBehaviour
             }
         }
     }
-
     private void MoveSlider(Vector2 movement)
     {
         if (theSlider != null)
@@ -89,7 +97,6 @@ public class MenuInput : MonoBehaviour
             theSlider.value += movement.x;
         }
     }
-
     private void SelectPreviousButton()
     {
         inputIndex -= 1;
@@ -155,7 +162,6 @@ public class MenuInput : MonoBehaviour
             theButton = null;
         }
     }
-
     public void ToggleInputAllowed()
     {
         if (allowInput)

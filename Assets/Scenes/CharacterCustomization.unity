@@ -1993,9 +1993,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1017840703}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1122968629}
+        m_MethodName: CloseNameDialog
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3070,6 +3070,7 @@ GameObject:
   - component: {fileID: 1017840707}
   - component: {fileID: 1017840706}
   - component: {fileID: 1017840705}
+  - component: {fileID: 1017840708}
   m_Layer: 5
   m_Name: NameDialog
   m_TagString: Untagged
@@ -3159,6 +3160,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017840703}
   m_CullTransparentMesh: 0
+--- !u!114 &1017840708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017840703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8a95059d5c8114388c029e944f3c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputs:
+  - {fileID: 520488934}
+  backButton: {fileID: 520488936}
+  moveSpeed: 1
+  playerId: 0
 --- !u!1 &1122968628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,6 +3209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameInput: {fileID: 559720282}
   nameDialog: {fileID: 1017840703}
+  characterInput: {fileID: 1122968631}
 --- !u!4 &1122968630
 Transform:
   m_ObjectHideFlags: 0
