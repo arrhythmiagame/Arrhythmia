@@ -3210,6 +3210,9 @@ MonoBehaviour:
   nameInput: {fileID: 559720282}
   nameDialog: {fileID: 1017840703}
   characterInput: {fileID: 1122968631}
+  skinImage: {fileID: 2127235857}
+  clothesImage: {fileID: 1617208084}
+  weaponImage: {fileID: 72746747}
 --- !u!4 &1122968630
 Transform:
   m_ObjectHideFlags: 0

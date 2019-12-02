@@ -2,14 +2,16 @@
 using System.IO;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [Header("File Locations")]
     [SerializeField] string folderName;
     [SerializeField] string saveFileName;
-    [SerializeField] string optionsFileName;
-    private string documentsPath;
-    private string folderPath;
+    [Header("Debug Only")]
+    [SerializeField] string documentsPath;
+    [SerializeField] string folderPath;
+    [SerializeField] string saveFilePath;
     [Header("References")]
     [SerializeField] GameObject loadButton;
     [SerializeField] GameObject startMenu;
@@ -18,6 +20,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject audioMenu;
     [SerializeField] GameObject controlsMenu;
+    [Header("Options to Save")]
+    [SerializeField] Slider masterSlider;
+    [SerializeField] Slider beatSlider;
+    [SerializeField] Slider ambientSlider;
     private void Start()
     {
         InitializeGame();
@@ -31,19 +37,17 @@ public class MainMenu : MonoBehaviour
         if (!Directory.Exists(folderPath))
             Directory.CreateDirectory(folderPath);
         // Creating save data file
-        string saveFilePath = Path.Combine(folderPath, saveFileName);
+        saveFilePath = Path.Combine(folderPath, saveFileName);
         if (!File.Exists(saveFilePath))
             File.Create(saveFilePath);
-        // Creating options data file
-        string optionsFilePath = Path.Combine(folderPath, optionsFileName);
-        if (!File.Exists(optionsFilePath))
-            File.Create(optionsFilePath);
+        PlayerPrefs.SetString("SavePath", saveFilePath);
         // Checking if previous saves exist
         var saveFileContents = File.ReadAllText(saveFilePath);
         if (saveFileContents != "")
         {
             loadButton.SetActive(true);
         }
+        LoadOptions();
         ActivateStartMenu();
     }
     // Create a new game
@@ -58,9 +62,18 @@ public class MainMenu : MonoBehaviour
         loadMenu.SetActive(true);
         Debug.LogError("Not implemented yet."); // TODO add load code
     }
+    // Save Options to PlayerPrefs 
     public void SaveOptions()
     {
-        Debug.LogError("Not implemented yet."); // TODO add save options code
+        PlayerPrefs.SetFloat("masterVolume", masterSlider.value);
+        PlayerPrefs.SetFloat("beatVolume", beatSlider.value);
+        PlayerPrefs.SetFloat("ambientVolume", ambientSlider.value);
+    }
+    public void LoadOptions()
+    {
+        masterSlider.value = PlayerPrefs.GetFloat("masterVolume", 0.5f);
+        beatSlider.value = PlayerPrefs.GetFloat("beatVolume", 0.5f);
+        ambientSlider.value = PlayerPrefs.GetFloat("ambientVolume", 0.5f);
     }
     public void GetControlsLayout()
     {

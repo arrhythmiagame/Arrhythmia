@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
@@ -7,6 +8,9 @@ public class CharacterMenu : MonoBehaviour
     [SerializeField] TMP_InputField nameInput;
     [SerializeField] GameObject nameDialog;
     [SerializeField] MenuInput characterInput;
+    [SerializeField] Image skinImage;
+    [SerializeField] Image clothesImage;
+    [SerializeField] Image weaponImage;
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -21,7 +25,16 @@ public class CharacterMenu : MonoBehaviour
         }
         else
         {
-            Debug.Log("TODO Save info to text file"); // TODO Save info to text file
+            string saveFilePath = PlayerPrefs.GetString("SavePath");
+            CharacterObject thisCharacter = new CharacterObject();
+            thisCharacter.characterName = nameInput.text;
+            thisCharacter.skinColor = skinImage.color;
+            thisCharacter.clothesColor = clothesImage.color;
+            thisCharacter.weaponColor = weaponImage.color;
+            string json = JsonUtility.ToJson(thisCharacter);
+            StreamWriter writer = new StreamWriter(saveFilePath, true);
+            writer.WriteLine(json);
+            writer.Close();
             SceneManager.LoadScene("StartingArea");
         }
     }
