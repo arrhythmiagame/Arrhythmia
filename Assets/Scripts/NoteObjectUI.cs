@@ -1,14 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class NoteObjectUI : MonoBehaviour
 {
 
-    public bool canBePressed = false;
-    public float beatDistance;
-    public RectTransform BeatMonitorRect;
+    [SerializeField] RectTransform BeatMonitorRect;
+    [SerializeField] AudioClip noteToPlay;
+    [SerializeField] AudioSource player;
+    [Header("Debug Only")]
+    [SerializeField] bool canBePressed = false;
+    [SerializeField] float beatDistance;
     private RectTransform thisRect;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +32,7 @@ public class NoteObjectUI : MonoBehaviour
                 canBePressed = true;
                 GameManager.instance.AllowInput();
                 GameManager.instance.IdlePulse();
+                PlayNote();
             }
         }
         else
@@ -58,5 +64,10 @@ public class NoteObjectUI : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
+    }
+
+    private void PlayNote()
+    {
+        player.PlayOneShot(noteToPlay);
     }
 }

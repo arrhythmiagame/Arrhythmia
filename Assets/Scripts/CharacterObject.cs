@@ -17,4 +17,9 @@ public class CharacterObject
     public int buildType;
     public int hairType;
     public int faceType;
+
+    public CharacterObject GetCharacterData()
+    {
+        return this;
+    }
 }

@@ -1,10 +1,10 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 using UnityEngine.UI;
-using System;
-using System.Text;
 public class CharacterMenu : MonoBehaviour
 {
     [SerializeField] TMP_InputField nameInput;
@@ -24,7 +24,6 @@ public class CharacterMenu : MonoBehaviour
     {
         string saveFileContents = File.ReadAllText(PlayerPrefs.GetString("SavePath"));
         saveIndex = saveFileContents.Split('\n').Length - 1;
-        Debug.Log(saveIndex.ToString());
         PlayerPrefs.SetInt("CurrentSaveIndex", saveIndex);
     }
     public void LoadMainMenu()
