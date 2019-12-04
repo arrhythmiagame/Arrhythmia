@@ -81,7 +81,14 @@ public class PickerInput : MonoBehaviour
     {
         if (theSlider != null)
         {
-            theSlider.value += movement.x;
+            if(theSlider.direction.ToString() == "BottomToTop")
+            {
+                theSlider.value += movement.y;
+            }
+            else
+            {
+                theSlider.value += movement.x;
+            }
         }
         if (theBoxSlider != null)
         {

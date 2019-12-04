@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Rewired;
 using TMPro;
+using System;
+using System.Collections;
 public class MenuInput : MonoBehaviour
 {
     [SerializeField] GameObject[] inputs;
@@ -13,10 +15,12 @@ public class MenuInput : MonoBehaviour
     private TMP_InputField theInput;
     private int inputIndex = 0;
     private bool allowInput = true;
-    private Vector2 rightStickVector;
-    // Rewired Stuff
+    [Header("Rewired Stuff")]
     [SerializeField] int playerId = 0;
-    private Player player; 
+    [SerializeField] float inputWaitTime = 0.1f;
+    private Player player;
+    private Vector2 rightStickVector;
+    private bool rightStickEnabled = true;
     private bool menuUp;
     private bool menuDown;
     private bool menuRight;
@@ -55,17 +59,41 @@ public class MenuInput : MonoBehaviour
     }
     private void ProcessInput()
     {
-        if (rightStickVector.x != 0.0f || rightStickVector.y != 0.0f)
+        Vector2 movement = new Vector2(1, 0);
+        if (theSlider != null)
         {
-            MoveSlider(rightStickVector * moveSpeed * Time.deltaTime);
-        }
-        if (menuRight)
-        {
-            MoveSlider(new Vector2(1, 0) * moveSpeed * Time.deltaTime);
-        }
-        if (menuLeft)
-        {
-            MoveSlider(new Vector2(-1, 0) * moveSpeed * Time.deltaTime);
+            if (rightStickVector.x != 0.0f || rightStickVector.y != 0.0f)
+            {
+                if (rightStickEnabled)
+                {
+                    movement = rightStickVector * moveSpeed * Time.deltaTime;
+                    if (theSlider.wholeNumbers)
+                    {
+                        movement = new Vector2(Mathf.Sign(rightStickVector.x), Mathf.Sign(rightStickVector.y));
+                    }
+                    MoveSlider(movement);
+                    rightStickEnabled = false;
+                    StartCoroutine(EnableRightStick());
+                }
+            }
+            if (menuRight)
+            {
+                movement = new Vector2(1, 0);
+                if (!theSlider.wholeNumbers)
+                {
+                    movement = movement * moveSpeed * Time.deltaTime;
+                }
+                MoveSlider(movement);
+            }
+            if (menuLeft)
+            {
+                movement = new Vector2(-1, 0);
+                if (!theSlider.wholeNumbers)
+                {
+                    movement = movement * moveSpeed * Time.deltaTime;
+                }
+                MoveSlider(movement);
+            }
         }
         if (menuDown)
         {
@@ -89,6 +117,11 @@ public class MenuInput : MonoBehaviour
                 backButton.onClick.Invoke();
             }
         }
+    }
+    IEnumerator EnableRightStick()
+    {
+        yield return new WaitForSeconds(inputWaitTime);
+        rightStickEnabled = true;
     }
     private void MoveSlider(Vector2 movement)
     {
