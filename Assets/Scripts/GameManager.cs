@@ -67,13 +67,10 @@ public class GameManager : MonoBehaviour
             {
                 theSaveIndex = saveLines.Length - 2;
             }
-            Debug.Log(theSaveIndex);
             string thisSave = saveLines[theSaveIndex];
             byte[] bytesToDecode = Convert.FromBase64String(thisSave);
             string thisJson = Encoding.UTF8.GetString(bytesToDecode);
-            Debug.Log(thisJson);
             thisCharacterClass = JsonUtility.FromJson<CharacterObject>(thisJson);
-            Debug.Log(thisCharacterClass.characterName + " loaded");
         }
     }
 

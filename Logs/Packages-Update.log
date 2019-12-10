@@ -34,3 +34,23 @@ The following packages were updated:
   com.unity.timeline from version 1.0.0 to 1.2.6
 The following packages were removed:
   com.unity.package-manager-ui@2.2.0
+
+=== Tue Dec 10 11:40:47 2019
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.package-manager-ui@2.2.0
+The following packages were updated:
+  com.unity.ide.visualstudio from version 1.0.5 to 1.0.11
+
+=== Tue Dec 10 11:50:25 2019
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.cinemachine@2.3.3
+  com.unity.postprocessing@2.1.6
+  com.unity.xr.legacyinputhelpers@2.0.2
