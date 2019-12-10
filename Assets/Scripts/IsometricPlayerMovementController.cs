@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Rewired;
 
 public class IsometricPlayerMovementController : MonoBehaviour
@@ -9,9 +7,6 @@ public class IsometricPlayerMovementController : MonoBehaviour
     [SerializeField] GameManager gm;
     private Rigidbody2D rbody;
     [Header("Rewired Stuff")]
-    // The Rewired player id of this character
-    [SerializeField] int playerId = 0;
-
     // The movement speed of this character
     [SerializeField] float moveSpeed = 3.0f;
     [SerializeField] float dashMultiplier = 2f;
@@ -30,13 +25,12 @@ public class IsometricPlayerMovementController : MonoBehaviour
         currentPos = rbody.position;
         newPos = currentPos;
 
-        // Get the Rewired Player object for this player and keep it for the duration of the character's lifetime
-        player = ReInput.players.GetPlayer(playerId);
     }
 
     private void Start()
     {
         gm = GameManager.instance;
+        player = ReInput.players.GetPlayer(gm.playerId);
     }
     // Update is called once per frame
     void FixedUpdate()

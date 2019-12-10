@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Public Variables")]
     public static GameManager instance;
+    public int playerId = 0; // Rewired player index
     [Header("Bools")]
     [SerializeField] bool inputAllowed = false;
     [SerializeField] bool startPlaying = false;
