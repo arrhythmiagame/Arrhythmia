@@ -39,14 +39,10 @@ public class MainMenu : MonoBehaviour
         // Creating save data file
         saveFilePath = Path.Combine(folderPath, saveFileName);
         if (!File.Exists(saveFilePath))
-            File.Create(saveFilePath);
-        PlayerPrefs.SetString("SavePath", saveFilePath);
-        // Checking if previous saves exist
-        var saveFileContents = File.ReadAllText(saveFilePath);
-        if (saveFileContents != "")
         {
-            loadButton.SetActive(true);
+            File.Create(saveFilePath);
         }
+        PlayerPrefs.SetString("SavePath", saveFilePath);
         LoadOptions();
         ActivateStartMenu();
     }
@@ -97,6 +93,12 @@ public class MainMenu : MonoBehaviour
     {
         CloseOutMenus();
         mainMenu.SetActive(true);
+        // Checking if previous saves exist
+        var saveFileContents = File.ReadAllText(saveFilePath);
+        if (saveFileContents != "")
+        {
+            loadButton.SetActive(true);
+        }
     }
     public void ActivateOptionsMenu()
     {

@@ -5,8 +5,9 @@ using UnityEngine;
 public class Change_Sprite_Order : MonoBehaviour
 {
     [SerializeField] SpriteRenderer[] changingSprites;
-    [SerializeField] int endDelta = 0;
     [SerializeField] SpriteRenderer targetSprite;
+    [Header("Debug info")]
+    [SerializeField] int endDelta = 0;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -22,8 +23,7 @@ public class Change_Sprite_Order : MonoBehaviour
             }
             foreach (var changingSprite in changingSprites)
             {
-                var newOrder = changingSprite.sortingOrder + endDelta;
-                changingSprite.sortingOrder = newOrder;
+                changingSprite.sortingOrder = changingSprite.sortingOrder + endDelta;
             }
         }
     }

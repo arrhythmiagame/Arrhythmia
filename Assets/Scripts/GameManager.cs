@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int[] multiplierThresholds;
     [Header("Notes")]
     [SerializeField] float totalNotes;
+    [SerializeField] float currentNotes = 0;
     [SerializeField] float normalHits;
     [SerializeField] float goodHits;
     [SerializeField] float perfectHits;
@@ -72,6 +73,28 @@ public class GameManager : MonoBehaviour
             byte[] bytesToDecode = Convert.FromBase64String(thisSave);
             string thisJson = Encoding.UTF8.GetString(bytesToDecode);
             thisCharacterClass = JsonUtility.FromJson<CharacterObject>(thisJson);
+            UpdateCharacter();
+        }
+    }
+
+    private void UpdateCharacter()
+    {
+        SpriteRenderer[] theSprites = theCharacterObject.GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer theSprite in theSprites)
+        {
+            string spriteName = theSprite.gameObject.name;
+            if(spriteName == "body")
+            {
+                theSprite.color = thisCharacterClass.skinColor;
+            }
+            if (spriteName == "clothes")
+            {
+                theSprite.color = thisCharacterClass.clothesColor;
+            }
+            if (spriteName == "weapon")
+            {
+                theSprite.color = thisCharacterClass.weaponColor;
+            }
         }
     }
 
@@ -88,13 +111,6 @@ public class GameManager : MonoBehaviour
                 startPlaying = true;
                 theBeatScroller.hasStarted = true;
                 theAmbientAudio.Play();
-            }
-        }
-        else
-        {
-            if (!theAmbientAudio.isPlaying && !resultsScreen.activeInHierarchy)
-            {
-                ActivateScoreDisplay();
             }
         }
     }
@@ -169,6 +185,7 @@ public class GameManager : MonoBehaviour
     }
     public void NoteHit()
     {
+        currentNotes++;
         if (currentMultiplier - 1 < multiplierThresholds.Length)
         {
             multiplierTracker++;
@@ -184,6 +201,7 @@ public class GameManager : MonoBehaviour
     }
     public void NoteMissed()
     {
+        currentNotes++;
         DisableInput();
         currentMultiplier = 1;
         currentMultiplier = 1;
